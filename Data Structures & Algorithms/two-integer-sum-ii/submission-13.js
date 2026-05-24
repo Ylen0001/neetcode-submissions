@@ -1,0 +1,23 @@
+class Solution {
+    /**
+     * @param {number[]} numbers
+     * @param {number} target
+     * @return {number[]}
+     */
+    twoSum(numbers, target) {
+        let mapped = new Map();
+        let left = 0;
+        let right = numbers.length - 1;
+        let res = [];
+
+        while(left <= right){
+            let total = numbers[left] + numbers[right];
+            if(total === target){
+                return [left + 1, right + 1];
+            } else if(total > target)
+                right--;
+            else
+                left++;
+        }
+    }
+}
